@@ -32,8 +32,8 @@ to={'/'}> <li  className='font-medium '>Home</li></NavLink>
   } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
 
 {user?
-          <button className='btn  btn-accent '>Logout</button>:
-          <button className='btn  bg-green-600 '>Login</button>
+          <button onClick={LogoutSubmit} className='btn  btn-accent '>Logout</button>:
+         <Link to={"/login"}><button className='btn  bg-green-600 '>Login</button></Link> 
 }
 
 
