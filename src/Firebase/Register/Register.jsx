@@ -1,10 +1,13 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
+import swal from 'sweetalert';
 
 const Register = () => {
+    const [valid,setValid] = useState([])
     const [Passwordmatch,setPasswordmatch] = useState('')
-const {registerForm} = useContext(AuthContext)
+    const [errorMessage,setErrorMessage] = useState('')
+const {registerForm,LogoutSubmit} = useContext(AuthContext)
 
 
 
@@ -12,6 +15,8 @@ const {registerForm} = useContext(AuthContext)
 
 
 function registerSubmit(e){
+    setErrorMessage('')
+    setPasswordmatch('')
 e.preventDefault()
 const email = e.target.email.value;
 const password = e.target.password.value;
@@ -26,20 +31,52 @@ if(password === confirm){
         e.target.reset()
         const user = userCredential.user;
         console.log(user);
+        LogoutSubmit()
+        swal({
+            text: "successfully completed",
+            icon: "success",
+          });
     })
-    .catch(()=>{
-        const errorCode = error.code;
+    .catch((error)=>{
+     
         const errorMessage = error.message;
+        if(errorMessage){
+            setErrorMessage("You are use same email") 
+    
+        }
     })
     
 }else{
     setPasswordmatch("password is not same")
 }
-
-
-
-
 }
+
+
+
+
+function passwordValidation(e){
+    const password = e.target.value;
+    if(!/(?=.*[A-Z])/.test(password) ){
+        setValid("password should be UpperCase")
+        
+    }
+    else if(! /(?=.*[0-9])/.test(password)){
+        setValid("password should be number")
+    }
+    else if(!/^(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]/.test(password)){
+        setValid("password should be spceial character") 
+    }
+    else if(password.length < 6){
+        setValid("password should be 6 digit or more ") 
+    }else{
+        setValid("") 
+    }
+}
+
+
+
+
+
 
 
 
@@ -60,15 +97,17 @@ if(password === confirm){
         <input className='border sm:w-64 my-2 p-2 rounded' type ='email' placeholder='type your email' name ='email' required>
             </input>  <br/>
         
-         <input className='sm:w-64 border  my-2 p-2 ' type ='password' placeholder='type your password' name = 'password' required></input>  <br/>
-
+         <input onInput={passwordValidation}  className='sm:w-64 border  my-2 p-2 ' type ='password' placeholder='type your password' name = 'password' required></input>  <br/>
+             <p className='text-red-700 font-bold'>{valid}</p>
          <input className='sm:w-64 border  my-2 p-2 ' type ='password' placeholder='Confirm your password' name = 'confirm' required></input> <br/>
         
          
         
          <input value="Register" className=' border sm:w-52 rounded-2 my-2 p-2 rounded-md bg-red-700 text-white' type='submit' ></input>  
         
-          <p>{Passwordmatch}</p>
+          <p className='text-red-700 font-bold'>{Passwordmatch}</p>
+          <p className='text-red-700 font-bold'>{errorMessage}</p>
+
 
          <p className='my-5 px-5'>Login if you have registered before, click
          
