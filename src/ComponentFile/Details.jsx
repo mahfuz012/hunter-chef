@@ -13,9 +13,11 @@ const findData = getData.find(p=>Number(getIdno.id) === p.chef_id)
 const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes,description} = findData
 
 
-
  return (
 <div className='container-fluid '>
+
+
+
 
 
 <div className="sm:flex  my-5 sm:rounded-full border p-2 border-blue-800">
@@ -46,7 +48,9 @@ const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes,descript
 </div>
 
 
-
+<div className="row justify-center">
+    <p className='font-bold text-3xl my-2 bg-gray-300 px-3 py-2'>Here are all the recipes of this chef</p>
+</div>
 
 <div className="row px-3 sm:justify-center">
 {

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link, NavLink } from 'react-router-dom';
+import "./Navbar.css"
 
 const Navbar = () => {
     return (
@@ -10,7 +12,7 @@ const Navbar = () => {
             </label>
 
             <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-80 ">
-          <li><a>Home</a></li>
+      <Link to={'http://localhost:5174/'}><li><a>Home</a></li></Link>
           <li><a>Blog </a></li>
           <button className='btn  btn-accent '>Login</button>
             </ul>
@@ -24,10 +26,17 @@ Chef's </span>
         </div>
 
         <div className=" navbar-center hidden lg:flex  px-2">
-          <ul className="menu menu-horizontal px-1">
 
-          <li className='font-medium mx-3'>Home</li>
-          <li className='font-medium'>Blog</li>
+          
+          <ul className="menu  menu-horizontal px-1">
+     
+  <NavLink  className="focus:bg-red-950"
+  
+  to={'http://localhost:5174/'}> 
+  
+  <li  className='font-medium '>Home</li></NavLink>
+
+   <Link><li className='font-medium sm:mx-3'>Blog</li></Link>  
       
           </ul>
           <button className='btn  bg-orange-700 border-none md:mx-3'>Login</button>

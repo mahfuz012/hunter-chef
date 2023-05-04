@@ -1,18 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AiOutlineHeart } from 'react-icons/ai';
 import { BsStar } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { SiCookiecutter  } from 'react-icons/si';
 import Rating from 'react-rating';
+import { toast } from 'react-toastify';
 
 const CardItems = ({userdata}) => {
 
-console.log(userdata);
+  const notify = () => {toast.success("Your favorites have been selected",{position: toast.POSITION.TOP_CENTER,autoClose: 4000,progress: undefined})}
+  
+
+const [disabled,setdisabled] = useState(false)
+function favorite(props){
+  notify()
+  setdisabled(true)
+  console.log(props);
+}
+
+
+
+
+
+
+
 
 const {recipe_id,recipe_name,ingredients,cooking_method,rating,img} = userdata
 
     return (
         <div className="card w-12/12 sm:w-7/12 border sm:mx-2 border-5 border-green-700 my-5 bg-base-100 shadow-xl">
+          
         <figure><img className='w-8/12' src={img} /></figure>
 
         <div className="card-body">
@@ -45,7 +62,7 @@ const {recipe_id,recipe_name,ingredients,cooking_method,rating,img} = userdata
             </div>
 
           <div className="card-actions justify-end ">
-            <button className="btn hover:bg-white bg-green-200 text-black border-none shadow-lg font-serif">
+            <button disabled={disabled} onClick={()=>favorite(recipe_id)} className="btn hover:bg-white bg-green-200 text-black border-none shadow-lg font-serif">
         
                 Favorite
                 
