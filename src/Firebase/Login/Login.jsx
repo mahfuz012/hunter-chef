@@ -12,12 +12,21 @@ const Login = () => {
     const location = useLocation()
     const from = location?.state?.from?.pathname || "/"
 
-    const {loginId,handleGoogle} = useContext(AuthContext)
+    const {loginId,handleGoogle,handleGithub} = useContext(AuthContext)
 
 
     const [errorMessage,setErrorMessage] = useState('')
 
     handleGoogle()
+    .then(() => {
+        navigation(from, { replace : true})
+    })
+    .catch((error) => {
+    
+      console.log(error);
+    });
+
+  handleGithub()
     .then(() => {
         navigation(from, { replace : true})
     })

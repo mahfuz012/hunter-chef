@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup, GithubAuthProvider } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import app from './firebase init';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -32,6 +32,7 @@ function LogoutSubmit(){
    }
    
 const provider = new GoogleAuthProvider();
+const githubprovider = new GithubAuthProvider()
 
 
 
@@ -39,6 +40,13 @@ const provider = new GoogleAuthProvider();
 function handleGoogle(){
     setLoader(true)
 return signInWithPopup(auth,provider)
+
+}
+
+
+function handleGithub(){
+    setLoader(true)
+return signInWithPopup(auth, githubprovider)
 
 }
 
@@ -68,7 +76,7 @@ useEffect(()=>{
 
 
 
-const data = {handleGoogle,registerForm,loginId,user,LogoutSubmit,loading}
+const data = {handleGithub,handleGoogle,registerForm,loginId,user,LogoutSubmit,loading}
 
     return (
         <div>
