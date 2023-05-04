@@ -1,8 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import "./Navbar.css"
+import { AuthContext } from '../../Firebase/AuthProvider';
 
 const Navbar = () => {
+
+const {user,LogoutSubmit} = useContext(AuthContext);
+
+
+
+
+
     return (
 <div className=" navbar bg-lime-100   justify-between">
         <div className="navbar-start ">
@@ -12,9 +20,23 @@ const Navbar = () => {
             </label>
 
             <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-80 ">
-      <Link to={'http://localhost:5174/'}><li><a>Home</a></li></Link>
-          <li><a>Blog </a></li>
-          <button className='btn  btn-accent '>Login</button>
+
+
+<NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+to={'/'}> <li  className='font-medium '>Home</li></NavLink>
+
+
+
+<NavLink className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
+
+{user?
+          <button className='btn  btn-accent '>Logout</button>:
+          <button className='btn  bg-green-600 '>Login</button>
+}
+
+
             </ul>
           </div>
 
@@ -32,13 +54,8 @@ Chef's </span>
      
 
 
-  <NavLink className={({ isActive, isPending }) =>
-    isPending ? "pending" : isActive ? "active" : ""
-  }
-  
-  to={'/'}> 
-  
-  <li  className='font-medium '>Home</li></NavLink>
+  <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""
+  } to={'/'}> <li  className='font-medium '>Home</li></NavLink>
 
 
 
@@ -48,7 +65,22 @@ Chef's </span>
   } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
       
           </ul>
-          <button className='btn  bg-orange-700 border-none md:mx-3'>Login</button>
+       
+          <div className="tooltip  tooltip-bottom tooltip-warning" data-tip={user?.displayName}>
+
+           { 
+           user?
+<Link><img className='w-12 rounded-full mx-2 border p-1 border-black' 
+src={user?.photoURL} /></Link>:
+''
+           }
+</div>
+
+
+{user?
+          <button onClick={LogoutSubmit} className='btn  btn-accent '>Logout</button>:
+         <Link to={"/login"}><button className='btn  bg-green-600 '>Login</button></Link> 
+}
 
         </div>
 

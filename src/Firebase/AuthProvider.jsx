@@ -6,9 +6,8 @@ export const  AuthContext = createContext([])
 
 const AuthProvider = ({children}) => {
 
-
-    const [user,setUser] = useState(null)
-    const [loading,setLoader] = useState(true) 
+const [user,setUser] = useState(null)
+ const [loading,setLoader] = useState(true) 
 
 
 
@@ -33,8 +32,7 @@ function LogoutSubmit(){
 
 
 useEffect(()=>{
-
-    const unsubcribe = onAuthStateChanged(auth, currentUser =>{
+ const unsubcribe = onAuthStateChanged(auth, currentUser =>{
      setUser(currentUser )
      setLoader(false)
    })

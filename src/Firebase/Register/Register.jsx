@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import swal from 'sweetalert';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [valid,setValid] = useState([])
@@ -22,20 +23,45 @@ const email = e.target.email.value;
 const password = e.target.password.value;
 const displayName = e.target.text.value;
 const confirm = e.target.confirm.value;
-const url = e.target.url.value;
-console.log(email,password,displayName,confirm,url);
+const photoURL = e.target.url.value;
+
+
 
 if(password === confirm){
-    registerForm(email,password,displayName,url)
+    registerForm(email,password,displayName,photoURL)
     .then((userCredential)=>{
         e.target.reset()
         const user = userCredential.user;
         console.log(user);
-        LogoutSubmit()
+    
+
+
+ updateProfile(userCredential.user, {
+     displayName: displayName, photoURL:String(photoURL)
+          }).then(() => {
+            console.log("Profile updated successfully.");
+          }).catch((error) => {
+            console.log("Error updating profile: ", error);
+          });
+
+
+
+
+
         swal({
             text: "successfully completed",
             icon: "success",
           });
+
+
+          LogoutSubmit()
+
+
+
+
+
+
+
     })
     .catch((error)=>{
      
