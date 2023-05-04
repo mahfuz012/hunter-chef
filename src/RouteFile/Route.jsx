@@ -4,6 +4,8 @@ import Home from "../PageFile/Home";
 import Details from "../ComponentFile/Details";
 import Error from "../ComponentFile/Error";
 import Blog from "../ComponentFile/Blog";
+import Login from "../Firebase/Login/Login";
+import Register from "../Firebase/Register/Register";
 
 
 
@@ -31,7 +33,25 @@ const router = createBrowserRouter([
           element:<Details />,
           loader :()=> fetch("https://myapp-eta-six.vercel.app/categories")
           
-        }
+        },
+        {
+          path:'/Login',
+          element:<Login />
+        },
+
+        {
+          path:'/register',
+          element:<Register />
+        },
+
+
+
+
+
+
+
+
+
       ]
     },
   ]);

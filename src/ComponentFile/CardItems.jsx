@@ -51,10 +51,10 @@ const {recipe_id,recipe_name,ingredients,cooking_method,rating,img} = userdata
 
  <div className='sm:flex   sm:w-12/12'>
              
-             <div className='sm:w-8/12 p-3 '>
-                 <h1 className='flex my-2 text-2xl p-2 font-extrabold text-green-600'>
+             <div className='sm:w-8/12  '>
+                 <h1 className='flex my-2 text-2xl  font-extrabold text-green-600'>
                     
-                    <SiCookiecutter  className='mt-1 me-2'/>
+               
                     Cooking Method : </h1>
                  <p>{cooking_method}</p>
              </div>
@@ -65,7 +65,7 @@ const {recipe_id,recipe_name,ingredients,cooking_method,rating,img} = userdata
             </div>
 
           <div className="card-actions justify-end ">
-            <button disabled={disabled} onClick={()=>favorite(recipe_id)} className="btn hover:bg-white bg-green-200 text-black border-none shadow-lg font-serif">
+            <button disabled={disabled} onClick={()=>favorite(recipe_id)} className="btn hover:bg-white bg-orange-500 text-black border-none shadow-lg font-serif">
         
                 Favorite
                 

@@ -59,7 +59,9 @@ const Home = () => {
 </div>
 
 
-
+<div className="row justify-center my-10">
+  <p className="bg-purple-800 text-white text-5xl font-bold border border-purple-600 rounded-full px-4 py-3">Slider Section</p>
+</div>
 <div className="bg-gradient-to-r from-black to-purple-700 sm:flex my-10 rounded-xl 
  px-3 py-2">
 
@@ -103,7 +105,7 @@ const Home = () => {
   <p className="bg-gray-800 px-5 py-3 text-center sm:rounded-full text-green-400 font-bold mx-auto text-4xl">Italian Food and Activities Section</p></div>
 
 
-<div className="sm:flex sm:my-24 justify-between  ">
+<div className="sm:flex sm:mt-10 sm:mb-20 justify-between  ">
 
 
 

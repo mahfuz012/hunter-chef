@@ -30,13 +30,22 @@ Chef's </span>
           
           <ul className="menu  menu-horizontal px-1">
      
-  <NavLink  className="focus:bg-red-950"
+
+
+  <NavLink className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  }
   
-  to={'http://localhost:5174/'}> 
+  to={'/'}> 
   
   <li  className='font-medium '>Home</li></NavLink>
 
-   <Link to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></Link>  
+
+
+
+   <NavLink className={({ isActive, isPending }) =>
+    isPending ? "pending" : isActive ? "active" : ""
+  } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
       
           </ul>
           <button className='btn  bg-orange-700 border-none md:mx-3'>Login</button>
