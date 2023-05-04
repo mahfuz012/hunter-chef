@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
-
-
+import Pdf from "react-to-pdf";
+import { HiDownload } from 'react-icons/hi';
 
 
 const Blog = () => {
 
-   
+    const ref = React.createRef();
 	
 
 
@@ -20,14 +20,23 @@ const Blog = () => {
 
 
 
-  
-
 
   <p className='sm:bg-blue-500 p-2 sm:text-white sm:rounded-full text-center text-3xl font-bold my-2 px-2'>This blog has some important questions and answers which are very useful</p>
 
 
+  <div className="row justify-center my-5 ">
+<Pdf targetRef={ref} filename="Chef's Address.pdf">
+        {({ toPdf }) => <button className='btn bg-lime-500 text-black border-none' onClick={toPdf}>
+         
+            Download Pdf    <HiDownload className='ms-2 text-lg'/></button>}
+ </Pdf>
+</div>
 
-<div  className=' my-10 sm:w-9/12 sm:mx-auto'>
+
+<div ref={ref}>
+
+<div   className=' my-8 sm:w-9/12 sm:mx-auto'>
+
 <p className='bg-purple-100 rounded-lg p-2 text-3xl italic font-bold text-green-600'>Question : <span className='text-2xl text-red-600'>Tell us the differences between uncontrolled and controlled components ?
 
 </span></p>
@@ -68,7 +77,7 @@ const Blog = () => {
 </p>
 </div>
 
-
+</div>
 
 
 

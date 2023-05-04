@@ -19,7 +19,7 @@ const Navbar = () => {
           </div>
 
           <a className=" btn btn-ghost normal-case text-xl">
-            <img src='navicon.png' />
+            <img src='https://i.ibb.co/Lxthc1r/navicon.png' />
 <span className='font-extrabold text-blue-700'>
 Chef's </span>
          <span className='mx-1 italic'>Address</span></a>
