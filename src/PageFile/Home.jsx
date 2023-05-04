@@ -52,7 +52,7 @@ const Home = () => {
 <div className="row">
   <p className="mx-auto my-5 text-3xl rounded-full bg-gray-700 py-3 px-5 text-orange-500 font-bold">All chef and their information</p>
 </div>
-<div className="row border justify-center">
+<div className="row  justify-center">
 {
     getData?.map(p=><ShowAlldata key={p.chef_id} data = {p} />)
 }
@@ -94,6 +94,71 @@ const Home = () => {
       </Swiper>
   
 </div>
+
+
+
+
+<div className="row ">
+  
+  <p className="bg-gray-800 px-5 py-3 text-center sm:rounded-full text-green-400 font-bold mx-auto text-4xl">Italian Food and Activities Section</p></div>
+
+
+<div className="sm:flex sm:my-24 justify-between  ">
+
+
+
+<div className="card  my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
+
+<img className="p-2 rounded-xl " src="https://i.ibb.co/4mmDkVL/1.png" alt="" />
+  <div className="card-body ">
+<h2 className="card-title font-bold text-3xl ">Pizza</h2>
+    <span className="">Originating in Naples, Italy, pizza has become a beloved dish around the world, with endless topping options to suit any palate</span>
+   
+  </div>
+  
+</div>
+
+<div className="card my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
+
+<img className="p-2  rounded-xl " src="https://i.ibb.co/D9QqvCK/2.png" alt="" />
+  <div className="card-body">
+<h2 className="card-title font-bold text-3xl ">Pasta</h2>
+    <p>With over 600 types of pasta, this versatile Italian staple can be enjoyed with a variety of sauces and ingredients for a satisfying meal</p>
+   
+  </div>
+</div>
+
+<div className="card my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
+
+<img className="p-2 rounded-xl " src="https://i.ibb.co/R9ssfSf/3.png" alt="" />
+  <div className="card-body">
+<h2 className="card-title font-bold text-3xl ">Risotto</h2>
+    <p>Made with Arborio rice, broth, and Parmesan cheese, risotto is a creamy and comforting dish that is popular in Northern Italy</p>
+   
+  </div>
+</div>
+
+
+
+<div className="card sm:w-72 my-5 sm:my-0 bg-base-100 shadow-xl rounded-xl border">
+<img className="p-2 rounded-xl " src="https://i.ibb.co/C8V7trg/4.png" alt="" />
+  <div className="card-body">
+<h2 className="card-title font-bold text-3xl ">Polenta</h2>
+    <p>A staple in Northern Italy, polenta is made by simmering cornmeal in water or stock until it reaches a creamy consistency</p>
+   
+  </div>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
 
 
 
