@@ -25,8 +25,9 @@ const Blog = () => {
 
 
   <div className="row justify-center my-5 ">
+
 <Pdf targetRef={ref} filename="Chef's Address.pdf">
-        {({ toPdf }) => <button className='btn bg-lime-500 text-black border-none' onClick={toPdf}>
+        {({ toPdf }) => <button className='btn hover:text-white bg-lime-500 text-black border-none' onClick={toPdf}>
          
             Download Pdf    <HiDownload className='ms-2 text-lg'/></button>}
  </Pdf>

@@ -1,4 +1,6 @@
 .active {
-    background-color: green !important;
+    background-color: rgb(64, 13, 206) !important;
+   color: aliceblue;
+   border-radius: 10px;
   }
   

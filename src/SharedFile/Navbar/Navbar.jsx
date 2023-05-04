@@ -55,14 +55,14 @@ Chef's </span>
 
 
   <NavLink className={({ isActive, isPending }) =>isPending ? "pending" : isActive ? "active" : ""
-  } to={'/'}> <li  className='font-medium '>Home</li></NavLink>
+  } to={'/'}> <li  className='font-medium p-2  '>Home</li></NavLink>
 
 
 
 
    <NavLink className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "active" : ""
-  } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
+  } to={'/blog'}><li className='font-medium p-2  sm:mx-3'>Blog</li></NavLink>  
       
           </ul>
        
