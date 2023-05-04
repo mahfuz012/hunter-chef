@@ -48,4 +48,8 @@
     margin-left: -1rem;
     margin-right: -1rem;
   }
-  
+  .swiper-pagination-bullet{
+    background-color:rgb(155, 6, 241) !important;
+    width: 1rem !important;
+    height: 1rem !important;
+  }
