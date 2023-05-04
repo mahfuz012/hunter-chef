@@ -36,7 +36,7 @@ Chef's </span>
   
   <li  className='font-medium '>Home</li></NavLink>
 
-   <Link><li className='font-medium sm:mx-3'>Blog</li></Link>  
+   <Link to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></Link>  
       
           </ul>
           <button className='btn  bg-orange-700 border-none md:mx-3'>Login</button>

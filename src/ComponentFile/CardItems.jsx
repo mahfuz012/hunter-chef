@@ -8,10 +8,13 @@ import { toast } from 'react-toastify';
 
 const CardItems = ({userdata}) => {
 
-  const notify = () => {toast.success("Your favorites have been selected",{position: toast.POSITION.TOP_CENTER,autoClose: 4000,progress: undefined})}
-  
 
-const [disabled,setdisabled] = useState(false)
+
+
+
+  
+  const notify = () => {toast.success("Your favorites have been selected",{position: toast.POSITION.TOP_CENTER,autoClose: 4000,progress: undefined})}
+  const [disabled,setdisabled] = useState(false)
 function favorite(props){
   notify()
   setdisabled(true)

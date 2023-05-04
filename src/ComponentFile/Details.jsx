@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import CardItems from './CardItems';
 import { AiFillLike } from 'react-icons/ai';
 
-const Details = () => {
+const  Details = () => {
  
+
+
 const getData = useLoaderData()
 const getIdno = useParams()
+
+
+
+
+
 const findData = getData.find(p=>Number(getIdno.id) === p.chef_id)
 
 
@@ -15,7 +22,6 @@ const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes,descript
 
  return (
 <div className='container-fluid '>
-
 
 
 
