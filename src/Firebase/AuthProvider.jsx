@@ -1,6 +1,8 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider } from "firebase/auth";
 import app from './firebase init';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const  AuthContext = createContext([])
 
@@ -29,6 +31,22 @@ function LogoutSubmit(){
     return signOut(auth)
    }
    
+const provider = new GoogleAuthProvider();
+
+
+
+
+function handleGoogle(){
+    setLoader(true)
+return signInWithPopup(auth,provider)
+
+}
+
+
+
+
+
+
 
 
 useEffect(()=>{
@@ -50,7 +68,7 @@ useEffect(()=>{
 
 
 
-const data = {registerForm,loginId,user,LogoutSubmit,loading}
+const data = {handleGoogle,registerForm,loginId,user,LogoutSubmit,loading}
 
     return (
         <div>

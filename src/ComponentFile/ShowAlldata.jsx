@@ -3,10 +3,16 @@ import { Link, useLoaderData } from 'react-router-dom';
 import { FaBeer, FaUserCircle } from 'react-icons/fa';
 import { AiFillLike, AiOutlineNumber } from 'react-icons/ai';
 import { BsFillArrowRightCircleFill } from 'react-icons/bs';
+import LazyLoad from 'react-lazy-load';
+
+// show data 
 
 const ShowAlldata = ({data}) => {
 
 const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes} = data
+
+
+
 
     return (
 
@@ -23,7 +29,17 @@ const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes} = data
     Chef information:</p>
 
 
+
+
+    <LazyLoad threshold={0.95}  onContentVisible={() => {console.log('loaded!')}}>
+
+
     <p className='font-medium mt-2'>Chef Name : {chef_name}</p>
+
+
+    </LazyLoad>
+
+    
     <p className='font-medium'>Years of experience : {years_of_experience}</p>
     <p className='font-medium'>
 

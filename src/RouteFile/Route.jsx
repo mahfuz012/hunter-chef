@@ -6,6 +6,7 @@ import Error from "../ComponentFile/Error";
 import Blog from "../ComponentFile/Blog";
 import Login from "../Firebase/Login/Login";
 import Register from "../Firebase/Register/Register";
+import PrivateRoute from "../PrivateRoute.jsx/PrivateRoute";
 
 
 
@@ -25,12 +26,12 @@ const router = createBrowserRouter([
         },
         {
           path:'/blog',
-          element:<Blog />,
-          loader :()=> fetch("https://myapp-eta-six.vercel.app/categories")
+          element:<Blog />
+          
         },
         {
           path:`/details/:id`,
-          element:<Details />,
+          element:<PrivateRoute><Details /></PrivateRoute>,
           loader :()=> fetch("https://myapp-eta-six.vercel.app/categories")
           
         },

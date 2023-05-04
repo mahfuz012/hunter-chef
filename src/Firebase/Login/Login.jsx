@@ -1,16 +1,32 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
-
+import { AiOutlineGoogle } from 'react-icons/ai';
+import { BsGithub } from 'react-icons/bs';
 
 
 
 const Login = () => {
+    const navigation = useNavigate()
 
-    const {loginId} = useContext(AuthContext)
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || "/"
+
+    const {loginId,handleGoogle} = useContext(AuthContext)
 
 
     const [errorMessage,setErrorMessage] = useState('')
+
+    handleGoogle()
+    .then(() => {
+        navigation(from, { replace : true})
+    })
+    .catch((error) => {
+    
+      console.log(error);
+    });
+
+
 
 
 function loginSubmit(e){
@@ -20,12 +36,13 @@ function loginSubmit(e){
     const email= e.target.email.value
     const password = e.target.password.value
 
+
     loginId(email,password)
     .then((userCredential)=>{
         const user = userCredential.user;
         console.log(user);
         e.target.reset()
-       
+        navigation(from, { replace : true})
 
     })
     .catch((error) => {
@@ -46,22 +63,10 @@ function loginSubmit(e){
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
     return (
 
 
- <div className='container sm:flex justify-center '>
+ <div className='container  justify-center '>
 <form onSubmit ={loginSubmit} className=' my-5 py-5  sm:text-center'>
  <h1 className='text-red-600 text-3xl font-bold my-5'>Login</h1>
 <input className='border sm:w-64 my-2 p-2 rounded' type='email' placeholder='type your email' name ='email' required>
@@ -82,10 +87,23 @@ function loginSubmit(e){
 
  </form>    
 
+ <div className='flex justify-center my-5'>
+    <button onClick={handleGoogle} className='btn bg-white text-black mx-2'>
+        <AiOutlineGoogle className='text-xl mx-2'/>
+        Google Login</button>
 
+    <button className='btn bg-white text-black'>
+        <BsGithub className='text-xl mx-2' />
+        Github Login</button>
+</div>
 
         
         </div>
+
+
+
+
+
     );
 };
 
