@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import CardItems from './CardItems';
 import { AiFillLike } from 'react-icons/ai';
 import { AuthContext } from '../Firebase/AuthProvider';
+import LazyLoad from 'react-lazy-load';
 
 
 
@@ -53,8 +54,13 @@ const Details = () => {
             <div className="sm:flex  my-5 sm:rounded-full border p-2 border-blue-800">
 
                 <div className='sm:flex sm:flex-col sm:justify-center'>
+                <LazyLoad>
+
                     <img className='w-screen  sm:rounded-full border-8 border-blue-300  p-3' src={chef_picture} />
+
+                    </LazyLoad >
                 </div>
+
 
 
                 <div className='p-3 sm:flex sm:flex-col sm:justify-center'>

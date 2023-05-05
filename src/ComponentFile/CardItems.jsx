@@ -3,6 +3,7 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { BsStar } from 'react-icons/bs';
 import { FaStar } from 'react-icons/fa';
 import { SiCookiecutter } from 'react-icons/si';
+import LazyLoad from 'react-lazy-load';
 import Rating from 'react-rating';
 import { toast } from 'react-toastify';
 
@@ -33,7 +34,11 @@ const CardItems = ({ userdata }) => {
   return (
     <div className="card w-12/12 sm:w-7/12 border sm:mx-2 border-5 border-green-700 my-5 bg-base-100 shadow-xl">
 
-      <figure><img className='w-8/12' src={img} /></figure>
+      <figure>
+      <LazyLoad>
+        <img className='w-8/12' src={img} />
+        </LazyLoad>
+        </figure>
 
       <div className="card-body">
         <h2 className="card-title italic text-3xl">Recipe Name: <span className='font-extrabold text-orange-800 '>{recipe_name}</span></h2>

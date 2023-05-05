@@ -23,7 +23,7 @@ const ShowAlldata = ({ data }) => {
 
             <figure className=''>
 
-                <LazyLoad   >
+                <LazyLoad  >
                     <img className='lazy-img w-44 p-2 rounded-full border-8 border-purple-800' src={chef_picture} alt="Album" />
 
                 </LazyLoad>
