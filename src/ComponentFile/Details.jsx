@@ -15,16 +15,16 @@ const Details = () => {
 
 
     useEffect(() => {
- 
+
         setLoading(true);
         fetch('https://myapp-eta-six.vercel.app/categories')
-          .then((response) => response.json())
-          .then((data) => setLoading(false));
-      }, []);
+            .then((response) => response.json())
+            .then((data) => setLoading(false));
+    }, []);
 
 
 
- 
+
     const findData = getData?.find(p => Number(getIdno.id) === p.chef_id)
 
     if (loading) {

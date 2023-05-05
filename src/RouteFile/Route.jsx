@@ -16,42 +16,40 @@ import ProfilePrivate from "../PrivateRoute.jsx/ProfilePrivate";
 
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main />,
-      errorElement:<Error />,
-      children:[
-        {
-          path:'/',
-          element:<Home />,
-          loader :()=> fetch("https://myapp-eta-six.vercel.app/categories")
-        },
-        {
-          path:'/blog',
-          element:<Blog />
-          
-        },
-        {
-          path:`/details/:id`,
-          element:<PrivateRoute><Details /></PrivateRoute>,
-          loader :()=> fetch("https://myapp-eta-six.vercel.app/categories")
-          
-        },
-        {
-          path:'/Login',
-          element:<Login />
-        },
+  {
+    path: "/",
+    element: <Main />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+        loader: () => fetch("https://myapp-eta-six.vercel.app/categories")
+      },
+      {
+        path: '/blog',
+        element: <Blog />
 
-        {
-          path:'/register',
-          element:<Register />
-        },
-        {
-          path:'/profile',
-          element:<ProfilePrivate> <UserProfile /> </ProfilePrivate>
-        }
+      },
+      {
+        path: `/details/:id`,
+        element: <PrivateRoute><Details /></PrivateRoute>,
+        loader: () => fetch("https://myapp-eta-six.vercel.app/categories")
 
+      },
+      {
+        path: '/Login',
+        element: <Login />
+      },
 
+      {
+        path: '/register',
+        element: <Register />
+      },
+      {
+        path: '/profile',
+        element: <ProfilePrivate> <UserProfile /> </ProfilePrivate>
+      }
 
 
 
@@ -59,9 +57,11 @@ const router = createBrowserRouter([
 
 
 
-      ]
-    },
-  ]);
+
+
+    ]
+  },
+]);
 
 
 export default router;

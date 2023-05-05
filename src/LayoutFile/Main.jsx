@@ -20,19 +20,19 @@ const Main = () => {
     return (
         <div className='container-fluid '>
 
-        <div className="row">
-        <Navbar />
-            </div>    
+            <div className="row">
+                <Navbar />
+            </div>
 
-<div className="row sectionHeight">
-<Outlet />
-</div>
+            <div className="row sectionHeight">
+                <Outlet />
+            </div>
 
-<div className="row ">
-        <Footer />
-</div>   
+            <div className="row ">
+                <Footer />
+            </div>
 
-<ToastContainer hideProgressBar theme="colored"/>
+            <ToastContainer hideProgressBar theme="colored" />
         </div>
     );
 };
