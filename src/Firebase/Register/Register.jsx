@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import swal from 'sweetalert';
 import { updateProfile } from 'firebase/auth';
@@ -9,13 +9,14 @@ const Register = () => {
     const [Passwordmatch,setPasswordmatch] = useState('')
     const [errorMessage,setErrorMessage] = useState('')
 const {registerForm,LogoutSubmit} = useContext(AuthContext)
-
+const navigation = useNavigate()
 
 
 
 
 
 function registerSubmit(e){
+   
     setErrorMessage('')
     setPasswordmatch('')
 e.preventDefault()
@@ -56,7 +57,7 @@ if(password === confirm){
 
           LogoutSubmit()
 
-
+          navigation('/login')
 
 
 

@@ -70,10 +70,8 @@ Chef's </span>
 
            { 
            user?
-<Link><img className='w-12 rounded-full mx-2 border p-1 border-black' 
-src={user?.photoURL} /></Link>:
-''
-           }
+<Link to={"./profile"}><img className='w-12 rounded-full mx-2 border p-1 border-black' 
+src={user?.photoURL} /></Link>:'' }
 </div>
 
 

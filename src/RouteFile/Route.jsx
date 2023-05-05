@@ -7,6 +7,8 @@ import Blog from "../ComponentFile/Blog";
 import Login from "../Firebase/Login/Login";
 import Register from "../Firebase/Register/Register";
 import PrivateRoute from "../PrivateRoute.jsx/PrivateRoute";
+import UserProfile from "../ComponentFile/UserProfile";
+import ProfilePrivate from "../PrivateRoute.jsx/ProfilePrivate";
 
 
 
@@ -44,6 +46,10 @@ const router = createBrowserRouter([
           path:'/register',
           element:<Register />
         },
+        {
+          path:'/profile',
+          element:<ProfilePrivate> <UserProfile /> </ProfilePrivate>
+        }
 
 
 

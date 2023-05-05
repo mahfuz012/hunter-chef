@@ -23,7 +23,7 @@ const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes} = data
 
         <figure className=''>
 
-        <LazyLoad height={250} once >
+        <LazyLoad  once >
 
 
             <img className='lazy-img w-44 p-2 rounded-full border-8 border-blue-400' src={chef_picture} alt="Album"/>

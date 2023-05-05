@@ -25,8 +25,7 @@ const Main = () => {
             </div>    
 
 <div className="row sectionHeight">
- 
-    <Outlet />
+<Outlet />
 </div>
 
 <div className="row ">
