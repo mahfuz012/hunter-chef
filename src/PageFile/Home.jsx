@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css"
 import { useLoaderData } from "react-router-dom";
 import ShowAlldata from "../ComponentFile/ShowAlldata";
@@ -12,8 +12,28 @@ const Home = () => {
 
   const getData = useLoaderData()
 
+  const [loading, setLoading] = useState(false);
 
 
+  useEffect(() => {
+
+      setLoading(true);
+      fetch('https://myapp-eta-six.vercel.app/categories')
+          .then((response) => response.json())
+          .then((data) => setLoading(false));
+  }, []);
+
+  if (loading) {
+
+    return (
+
+        <div className="mx-auto  animate-spin inline-block w-52 h-52 border-[3px] border-current border-t-transparent text-blue-600 rounded-full" role="status" aria-label="loading">
+            <span className="sr-only">Loading...</span>
+
+        </div>
+    )
+
+}
 
   return (
 
@@ -26,7 +46,7 @@ const Home = () => {
 
           <div className="  p-2 flex flex-col justify-center">
 
-            <h1 style={{ color: "#D48A3D" }} className="font-serif text-7xl sm:p-3 font-extrabold">
+            <h1 style={{ color: "#D48A3D" }} className=" font-serif sm:text-7xl sm:p-3 font-extrabold">
               Different chef</h1>
             <h1 className="text-white text-7xl p-3 font-mono font-extrabold">
               Different Taste</h1>

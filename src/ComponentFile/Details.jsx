@@ -10,9 +10,9 @@ import LazyLoad from 'react-lazy-load';
 const Details = () => {
     const getData = useLoaderData()
     const getIdno = useParams()
-    const [loading, setLoading] = useState(false);
+  
     const [data, setData] = useState([]);
-
+    const [loading, setLoading] = useState(false);
 
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Pdf from "react-to-pdf";
 import { HiDownload } from 'react-icons/hi';
 
@@ -9,8 +9,27 @@ const Blog = () => {
     const ref = React.createRef();
 
 
+    const [loading, setLoading] = useState(false);
 
+    useEffect(() => {
 
+        setLoading(true);
+        fetch('https://myapp-eta-six.vercel.app/categories')
+            .then((response) => response.json())
+            .then((data) => setLoading(false));
+    }, []);
+  
+    if (loading) {
+  
+      return (
+  
+          <div className="mx-auto  animate-spin inline-block w-52 h-52 border-[3px] border-current border-t-transparent text-blue-600 rounded-full" role="status" aria-label="loading">
+              <span className="sr-only">Loading...</span>
+  
+          </div>
+      )
+  
+  }
 
 
 
