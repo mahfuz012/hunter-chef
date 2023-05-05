@@ -15,8 +15,8 @@ console.log(user);
             <img className='w-52' src={user?.photoURL} alt="" />
         
         <div className=''>
-          <p className='text-xl text-blue-600 font-bold'>Email Address: {user?.email}</p>
-          <p className='text-xl text-blue-600 font-bold'>Name : {user?.displayName}</p>
+          <p className='text-xl text-blue-600 font-bold mx-2'>Email Address: {user?.email}</p>
+          <p className='text-xl text-blue-600 font-bold mx-2'>Name : {user?.displayName}</p>
           </div>
 
           </div>

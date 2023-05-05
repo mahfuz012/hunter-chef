@@ -12,7 +12,7 @@ console.log(user);
 
 
     return (
-<div className=" navbar bg-lime-100   justify-between">
+<div className=" navbar bg-gray-100   sm:justify-between">
         <div className="navbar-start ">
           <div className="dropdown">
          <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,18 +22,28 @@ console.log(user);
             <ul tabIndex={0} className=" menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-80 ">
 
 
-<NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""}
+<NavLink style={{padding:"1rem"}} className= {({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : ""   }
 to={'/'}> <li  className='font-medium '>Home</li></NavLink>
 
 
 
-<NavLink className={({ isActive, isPending }) =>
+<NavLink style={{padding:"1rem"}} className={({ isActive, isPending }) =>
     isPending ? "pending" : isActive ? "active" : ""
-  } to={'/blog'}><li className='font-medium sm:mx-3'>Blog</li></NavLink>  
+  } to={'/blog'}><li className='font-medium sm:mx-3 '>Blog</li></NavLink>  
+
+<div className="tooltip  tooltip-bottom tooltip-warning" data-tip={user?.displayName}>
+
+{ 
+user?
+<Link to={"./profile"}><img className='w-12 rounded-full border  border-black' 
+src={user?.photoURL} /></Link>:'' }
+
+</div>
+
 
 {user?
-          <button onClick={LogoutSubmit} className='btn  btn-accent '>Logout</button>:
-         <Link to={"/login"}><button className='btn  bg-green-600 '>Login</button></Link> 
+          <button onClick={LogoutSubmit} className='btn  btn-accent my-5'>Logout</button>:
+         <Link to={"/login"}><button className='btn  bg-green-600 my-5'>Login</button></Link> 
 }
 
 
@@ -72,6 +82,7 @@ Chef's </span>
            user?
 <Link to={"./profile"}><img className='w-12 rounded-full mx-2 border p-1 border-black' 
 src={user?.photoURL} /></Link>:'' }
+
 </div>
 
 

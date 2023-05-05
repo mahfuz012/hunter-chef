@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 
+.bacground{
+  background-image: url("https://i.ibb.co/NSQh7YC/ITaly-food.png");
+  background-repeat: no-repeat;
+  background-size:cover;
 
+
+}
 
 
 

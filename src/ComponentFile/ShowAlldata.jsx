@@ -16,17 +16,15 @@ const {chef_id,chef_picture,chef_name,years_of_experience,recipes,likes} = data
 
     return (
 
-        <div className="px-2 pt-5 sm:pt-0 sm:w-5/12 sm:mx-5 card border-8 border-green-200 lg:card-side bg-base-100 shadow-xl my-3">
+        <div style={{alignItems:'center'}} className="px-2 flex pt-5 sm:pt-0 sm:w-5/12 sm:mx-5 card border-8 border-green-200 lg:card-side bg-base-100 shadow-xl my-3">
 
 
 
 
         <figure className=''>
 
-        <LazyLoad  once >
-
-
-            <img className='lazy-img w-44 p-2 rounded-full border-8 border-blue-400' src={chef_picture} alt="Album"/>
+   <LazyLoad   >
+        <img className='lazy-img w-44 p-2 rounded-full border-8 border-blue-400' src={chef_picture} alt="Album"/>
 
      </LazyLoad>
 

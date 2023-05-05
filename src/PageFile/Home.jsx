@@ -17,11 +17,13 @@ const Home = () => {
 
   return (
 
-<div className="container-fluid   border-red-700">
+<div className="container-fluid  ">
     
 
-<div className="row">
-<div className="sm:flex  bacground ">
+<div className="row  justify-center bacground">
+
+<div className="sm:flex   ">
+
 <div className="  p-2 flex flex-col justify-center">
   
     <h1 style={{color:"#D48A3D"}} className="font-serif text-7xl sm:p-3 font-extrabold">
