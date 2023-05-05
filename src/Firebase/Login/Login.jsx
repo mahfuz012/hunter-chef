@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import { AiOutlineGoogle } from 'react-icons/ai';
@@ -7,6 +7,8 @@ import { BsGithub } from 'react-icons/bs';
 
 
 const Login = () => {
+
+
     const navigation = useNavigate()
 
     const location = useLocation()
@@ -75,6 +77,33 @@ const Login = () => {
 
             });
     }
+
+
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+
+        setLoading(true);
+        fetch('https://myapp-eta-six.vercel.app/categories')
+            .then((response) => response.json())
+            .then((data) => setLoading(false));
+    }, []);
+  
+    if (loading) {
+  
+      return (
+  
+          <div className="mx-auto  animate-spin inline-block w-52 h-52 border-[3px] border-current border-t-transparent text-blue-600 rounded-full" role="status" aria-label="loading">
+              <span className="sr-only">Loading...</span>
+  
+          </div>
+      )
+  
+  }
+
+
+
+
 
 
 
