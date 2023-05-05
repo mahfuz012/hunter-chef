@@ -17,7 +17,10 @@ const Login = () => {
 
     const [errorMessage,setErrorMessage] = useState('')
 
-    handleGoogle()
+
+    
+function handleGoogles(){
+handleGoogle()
     .then(() => {
         navigation(from, { replace : true})
     })
@@ -25,7 +28,10 @@ const Login = () => {
     
       console.log(error);
     });
+}
 
+
+function handleGithubb(){
   handleGithub()
     .then(() => {
         navigation(from, { replace : true})
@@ -36,7 +42,7 @@ const Login = () => {
     });
 
 
-
+}
 
 function loginSubmit(e){
     setErrorMessage('')
@@ -97,11 +103,12 @@ function loginSubmit(e){
  </form>    
 
  <div className='flex justify-center my-5'>
-    <button onClick={handleGoogle} className='btn bg-white text-black mx-2'>
+
+    <button onClick={handleGoogles} className='btn bg-white text-black mx-2'>
         <AiOutlineGoogle className='text-xl mx-2'/>
         Google Login</button>
 
-    <button className='btn bg-white text-black'>
+    <button onClick={handleGithubb} className='btn bg-white text-black'>
         <BsGithub className='text-xl mx-2' />
         Github Login</button>
 </div>
