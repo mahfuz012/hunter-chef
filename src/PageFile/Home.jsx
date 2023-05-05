@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import LazyLoad from "react-lazy-load";
 
 const Home = () => {
 
@@ -83,15 +84,51 @@ const Home = () => {
       >
 
 
-<SwiperSlide><img src="https://i.ibb.co/THhKnML/Untitled-designa-1.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/H4T7ffY/Untitled-7.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/hcNL52M/Untitled-adesign-7.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/r2r1mrH/Untitled-design.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/XSbG7NV/Untitled-design-5.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/FBSwX2S/Untitled-design-3.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/6wF1hDb/Untitled-design-4.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/xGrFM4r/Untitled-design-2.png"/></SwiperSlide>
-  <SwiperSlide><img src="https://i.ibb.co/VmBsv00/Untitled-design-1.png"/></SwiperSlide>
+<SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/THhKnML/Untitled-designa-1.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/H4T7ffY/Untitled-7.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/hcNL52M/Untitled-adesign-7.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/r2r1mrH/Untitled-design.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/XSbG7NV/Untitled-design-5.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/FBSwX2S/Untitled-design-3.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/6wF1hDb/Untitled-design-4.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/xGrFM4r/Untitled-design-2.png" />
+        </LazyLoad>
+      </SwiperSlide>
+      <SwiperSlide>
+        <LazyLoad height={250}>
+          <img src="https://i.ibb.co/VmBsv00/Untitled-design-1.png" />
+        </LazyLoad>
+      </SwiperSlide>
       
       </Swiper>
   
@@ -111,7 +148,11 @@ const Home = () => {
 
 <div className="card  my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
 
+<LazyLoad >
 <img className="p-2 rounded-xl " src="https://i.ibb.co/4mmDkVL/1.png" alt="" />
+</LazyLoad>
+
+
   <div className="card-body ">
 <h2 className="card-title font-bold text-3xl ">Pizza</h2>
     <span className="">Originating in Naples, Italy, pizza has become a beloved dish around the world, with endless topping options to suit any palate</span>
@@ -122,7 +163,10 @@ const Home = () => {
 
 <div className="card my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
 
+<LazyLoad>
 <img className="p-2  rounded-xl " src="https://i.ibb.co/D9QqvCK/2.png" alt="" />
+</LazyLoad>
+
   <div className="card-body">
 <h2 className="card-title font-bold text-3xl ">Pasta</h2>
     <p>With over 600 types of pasta, this versatile Italian staple can be enjoyed with a variety of sauces and ingredients for a satisfying meal</p>
@@ -132,7 +176,10 @@ const Home = () => {
 
 <div className="card my-5 sm:my-0 sm:w-72 bg-base-100 shadow-xl rounded-xl border">
 
+<LazyLoad >
 <img className="p-2 rounded-xl " src="https://i.ibb.co/R9ssfSf/3.png" alt="" />
+</LazyLoad>
+
   <div className="card-body">
 <h2 className="card-title font-bold text-3xl ">Risotto</h2>
     <p>Made with Arborio rice, broth, and Parmesan cheese, risotto is a creamy and comforting dish that is popular in Northern Italy</p>
@@ -143,7 +190,11 @@ const Home = () => {
 
 
 <div className="card sm:w-72 my-5 sm:my-0 bg-base-100 shadow-xl rounded-xl border">
+
+<LazyLoad >
 <img className="p-2 rounded-xl " src="https://i.ibb.co/C8V7trg/4.png" alt="" />
+</LazyLoad>
+
   <div className="card-body">
 <h2 className="card-title font-bold text-3xl ">Polenta</h2>
     <p>A staple in Northern Italy, polenta is made by simmering cornmeal in water or stock until it reaches a creamy consistency</p>
